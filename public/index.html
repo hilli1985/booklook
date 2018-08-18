@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./bootstrap/dist/css/bootstrap.min.css" />
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="style.css">
-
-
+    
+    
 </head>
 
 <body>
@@ -19,51 +19,50 @@
             <div class="page-header">
                 <h1>BookLook <i class="far fa-eye"></i></h1>
             </div>
-            <div class="books">
-            </div>
-            <form class="form-isbn">
-                <h3>Serch by ISBN</h3>
-                <div class="form-group">
-                    <input type="text" id="book-isbn" class="form-control" placeholder="ISBN here">
+            <form class="form-search">
+                <div class="form-group col-md-12">
+                    <h3>Search by</h3>
                 </div>
-                <button class="btn btn-primary search-btn" type="button">Search</button>
-            </form>
-
-            <form class="form-title">
-                <h3>Serch by Title</h3>
-                <div class="form-group">
-                    <input type="text" id="book-title" class="form-control" placeholder="Title here">
+                <div class="form-row">
+                    <div class="form-group col-md-9">
+                        <input type="text" id="lookup-value" class="form-control" placeholder="Type here">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <select class="form-control" id="select">
+                            <option value="select">Select</option>
+                            <option value="isbn">ISBN</option>
+                            <option value="intitle">Title</option>
+                            <option value="inauthor">Author</option>
+                        </select>
+                    </div>
                 </div>
-                <button class="btn btn-primary search-btn" type="button">Search</button>
-            </form>
-            <form class="form-author">
-                <h3>Serch by Author</h3>
-                <div class="form-group">
-                    <input type="text" id="book-author" class="form-control" placeholder="Author here">
+                <div class="form-group col-md-3">
+                    <button class="btn btn-primary search-btn" type="button">Search</button>
                 </div>
-                <button class="btn btn-primary search-btn" type="button">Search</button>
             </form>
+            <div class="books col-md-12">
+                </div>
         </div>
     </div>
-    </div>
+</div>
 
-    <script id="entry-template" type="text/x-handlebars-template">
-        <div class="book">
-            <h3>{{title}}</h3>
-            <p>{{description}}</p>
-            <h4>Written By:{{authors}}</h4>
-            <button class="img-btn" type="button" style="background-image: url({{image}})"></button>
-            <!-- <div class="img-btn" style="background-image: url({{image}})"> -->
+<script id="entry-template" type="text/x-handlebars-template">
+    <div class="book">
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+        <h4>Written By:{{authors}}</h4>
+        <button class="img-btn" type="button" style="background-image: url({{image}})"></button>
+        <!-- <div class="img-btn" style="background-image: url({{image}})"> -->
             <!-- </div> -->
-    </script>
-
-    <!-- Scripts -->
-    <!-- External scripts -->
-    <script src="https://code.jquery.com/jquery-3.2.1.js "></script>
-    <script src="./jquery/dist/jquery.min.js "></script>
-    <script src="./handlebars/dist/handlebars.min.js "></script>
-
-    <script src="script.js "></script>
-</body>
-
-</html>
+        </script>
+        
+        <!-- Scripts -->
+        <!-- External scripts -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js "></script>
+        <script src="./jquery/dist/jquery.min.js "></script>
+        <script src="./handlebars/dist/handlebars.min.js "></script>
+        
+        <script src="script.js "></script>
+    </body>
+    
+    </html>
