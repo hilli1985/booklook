@@ -83,7 +83,8 @@ let render = function(select) {
         
         //Events 
 
-        $('.form-search').on('click', '.search-btn', function() {
+        $('.form-search').on('click', '.search-btn', function(e) {  
+            e.preventDefault();
             let select = $( "#select option:selected" ).val();
             console.log("selcet:"+select);
             let lookup_value = $('.form-search').find('#lookup-value').val();
