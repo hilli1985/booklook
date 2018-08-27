@@ -19,7 +19,7 @@ let render = function(select) {
         $('.books').append("<h3 class='not found'>" + "Sorry Notihng Found..." + "</h3>");
         return;
     }
-    // render results
+    //render results
     for (let i = 0; i < 10; i++) {
         item = items[i].volumeInfo;
         let title = item.title;
