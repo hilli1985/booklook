@@ -67,20 +67,17 @@ let render = function(select) {
         
         //q=isbn:,q=intitle:,q=inauthor:
         var fetchBySelect = function(select,lookup_value){
-            let url = 'https://www.googleapis.com/books/v1/volumes?q='+select+':'+lookup_value;
             $.ajax({
                 method: "GET",
-                url: 'https://www.googleapis.com/books/v1/volumes?q='+select+':'+lookup_value,
-                success: function(data) {
-                    dataBook = data;
-                    render(select);
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    console.log(textStatus);
-                }
+                url: 'https://www.googleapis.com/books/v1/volumes?q='+select+':'+lookup_value
+            }).then(function(response) {
+                dataBook = response;
+                render(select);
+            }).catch(function(error) {
+                console.log(error.data);
             });
-        };
-        
+        };    
+
         //Events 
 
         $('.form-search').on('click', '.search-btn', function(e) {  
